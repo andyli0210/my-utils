@@ -120,7 +120,7 @@ public class ConvexHull {
         
         List<ConvexHull.Point> points = new ArrayList<ConvexHull.Point>();
         
-        points.add(new ConvexHull.Point(0, 3));
+        points.add(new ConvexHull.Point(1, 3));
         points.add(new ConvexHull.Point(2, 2));
         points.add(new ConvexHull.Point(1, 1));
         points.add(new ConvexHull.Point(2, 1));
