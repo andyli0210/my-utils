@@ -103,4 +103,20 @@ public class Circle {
 
         return pts;
     }
+
+    public String kmlPolygon(double lon, double lat, int meters, int n, int offset) {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("<Polygon>\n");
+        stringBuilder.append("  <outerBoundaryIs><LinearRing><coordinates>\n");
+        double[][] p = spoints(lon, lat, meters, n, offset);
+
+        for (int i = 0; i < p.length; i++) {
+            double[] vertex = p[i];
+            stringBuilder.append("    " + vertex[0] + "," + vertex[1] + "\n");
+        }
+        stringBuilder.append("  </coordinates></LinearRing></outerBoundaryIs>\n");
+        stringBuilder.append("</Polygon>\n");
+
+        return stringBuilder.toString();
+    }
 }
